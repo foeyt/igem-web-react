@@ -1,0 +1,20 @@
+{
+  "short_name": "Razorsax",
+  "name": "Razorsax",
+  "icons": [
+    {
+      "src": "./img/title.jpg",
+      "type": "image/jpg",
+      "sizes": "150x150"
+    },
+    {
+      "src": "./img/hero.jpg",
+      "type": "image/jpeg",
+      "sizes": "3328x1872"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

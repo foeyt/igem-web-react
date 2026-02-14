@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/igem-web-react/static/css/main.6622c80a.css",
+    "main.js": "/igem-web-react/static/js/main.7e2db34d.js",
+    "static/js/453.e88994d7.chunk.js": "/igem-web-react/static/js/453.e88994d7.chunk.js",
+    "index.html": "/igem-web-react/index.html",
+    "main.6622c80a.css.map": "/igem-web-react/static/css/main.6622c80a.css.map",
+    "main.7e2db34d.js.map": "/igem-web-react/static/js/main.7e2db34d.js.map",
+    "453.e88994d7.chunk.js.map": "/igem-web-react/static/js/453.e88994d7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6622c80a.css",
+    "static/js/main.7e2db34d.js"
+  ]
+}
