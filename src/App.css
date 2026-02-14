@@ -1,38 +1,319 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html, body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: #000;
+  -webkit-tap-highlight-color: transparent;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+@keyframes spark-fade {
+  0% {
+    opacity: 1;
+    transform: scale(1) translate(0, 0);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0) translate(var(--tx), var(--ty));
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.hero-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #000;
+}
+
+/* 初始完整图片 */
+.full-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  cursor: pointer;
+  z-index: 10;
+  transition: opacity 0.5s ease;
+  padding: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.full-image.hidden {
+  opacity: 0;
+  pointer-events: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.full-image img {
+  max-width: 90vw;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.click-text {
+  color: #fff;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  opacity: 0.6;
+  animation: pulse 2s infinite;
+  user-select: none;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.8; }
+}
+
+/* 上半部分 Banner */
+.top-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 5;
+  cursor: pointer;
+  transform: translateY(-100%);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.top-banner.visible {
+  transform: translateY(-35vh);
+}
+
+.top-banner img {
+  width: auto;
+  height: 100vh;
+  max-width: 95vw;
+  object-fit: contain;
+  object-position: top center;
+}
+
+/* 下半部分 Banner */
+.bottom-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 5;
+  cursor: pointer;
+  transform: translateY(100%);
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bottom-banner.visible {
+  transform: translateY(35vh);
+}
+
+.bottom-banner img {
+  width: auto;
+  height: 100vh;
+  max-width: 95vw;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+/* 中间内容 */
+.center-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 6;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease 0.3s;
+  padding: 20px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.center-content.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* 页面内容容器 */
+.pages-container {
+  cursor: pointer;
+  user-select: none;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 16px;
+  transition: transform 0.2s ease;
+}
+
+.pages-container:active {
+  transform: scale(0.98);
+}
+
+.pages-container h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.pages-container p {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 30px;
+}
+
+/* 页面指示器 */
+.page-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: background 0.3s ease;
+}
+
+.dot.active {
+  background: #fff;
+}
+
+.blog {
+    color: ghostwhite;
+    text-decoration: dashed;
+    padding: 2px 6px;
+    border-radius: 3px;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: background-color 0.3s;
+}
+
+.skill-list, .hobby-list {
+    padding: 0;
+}
+
+.skill-list li, .hobby-list li {
+    font-family: Adobe-Siyuan;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.skill-list li:last-child, .hobby-list li:last-child {
+    border-bottom: none;
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .full-image img {
+    max-width: 95vw;
+    max-height: 60vh;
   }
-  to {
-    transform: rotate(360deg);
+
+  .click-text {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  .top-banner.visible {
+    transform: translateY(-30vh);
+  }
+
+  .bottom-banner.visible {
+    transform: translateY(30vh);
+  }
+
+  .top-banner img,
+  .bottom-banner img {
+    max-width: 98vw;
+  }
+
+  .pages-container {
+    padding: 30px 20px;
+  }
+
+  .pages-container h1 {
+    font-size: 2rem;
+  }
+
+  .pages-container p {
+    font-size: 1rem;
+  }
+}
+
+/* 小屏手机适配 */
+@media (max-width: 480px) {
+  .full-image img {
+    max-height: 55vh;
+  }
+
+  .top-banner.visible {
+    transform: translateY(-25vh);
+  }
+
+  .bottom-banner.visible {
+    transform: translateY(25vh);
+  }
+
+  .pages-container h1 {
+    font-size: 1.8rem;
+  }
+}
+
+/* 横屏模式 */
+@media (max-height: 500px) and (orientation: landscape) {
+  .full-image img {
+    max-height: 75vh;
+  }
+
+  .top-banner.visible {
+    transform: translateY(-38vh);
+  }
+
+  .bottom-banner.visible {
+    transform: translateY(38vh);
+  }
+
+  .click-text {
+    margin-top: 10px;
+  }
+
+  .pages-container {
+    padding: 20px;
+  }
+}
+
+/* 触控设备优化 */
+@media (hover: none) {
+  .full-image:active {
+    opacity: 0.9;
+  }
+  
+  .top-banner:active,
+  .bottom-banner:active {
+    filter: brightness(0.8);
   }
 }
