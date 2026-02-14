@@ -10,16 +10,19 @@ function App() {
   const heroTopUrl = "./img/hero-top.jpeg";
   const heroBottomUrl = "./img/hero-bottom.jpeg";
 
+  // 点击图片后分割
   const handleImageClick = () => {
     setIsSplit(true);
   };
 
+  // 最后一页重新返回一开始状态
   const handleCollapse = () => {
     setIsSplit(false);
   };
 
   return (
     <div className="hero-page">
+      {/* 粒子效果组件 */}
       <SparkParticles enabled={true} throttleMs={50} maxSparks={50} />
       
       {/* 上半部分 Banner */}

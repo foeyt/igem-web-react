@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 
+/**
+ * 此文件用于内容写作，与我静态页面版本内容完全一致（可能是我没话遍了）。
+ * 通过点击可以进行切换下一页，同时加入页面指示器圆点。
+ * @returns 内容文本的 JSX。
+ */
 const ContentPages = ({ onCollapse }) => {
   const [currentPage, setCurrentPage] = useState(0);
 

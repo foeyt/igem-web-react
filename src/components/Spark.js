@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 /**
  * 此文件用于火花粒子的显示方式与样式，生成火花粒子效果，由 Kimi 提供设计。
  * 需要注意的是，这里存在明显的性能问题，需要进行优化。
+ * @todo 对运算进行优化，调整参数来减少卡顿，目前的思路，减少粒子数量，选择更优秀的随机算法。
  */
 const Spark = ({ x, y, color, onComplete }) => {
   const [isVisible, setIsVisible] = useState(true);

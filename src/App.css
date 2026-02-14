@@ -12,6 +12,7 @@ html, body {
   -webkit-tap-highlight-color: transparent;
 }
 
+/* 火花粒子效果淡入淡出动画 */
 @keyframes spark-fade {
   0% {
     opacity: 1;
@@ -49,6 +50,9 @@ html, body {
   padding: 20px;
 }
 
+/* 逻辑是：我预先准备了三张图片，hero, hero-top, hero-bottom，当我点击 hero 后，hero 页面显示消失，此时显示 hero-top, hero-bottom，
+   伪造出 hero 图片从中间一分为二的假象。
+*/
 .full-image.hidden {
   opacity: 0;
   pointer-events: none;
@@ -199,6 +203,7 @@ html, body {
   background: #fff;
 }
 
+/* 这些样式用于美化内容，和我静态页面内容样式一模一样 */
 .blog {
     color: ghostwhite;
     text-decoration: dashed;
