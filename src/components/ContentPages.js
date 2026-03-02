@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "../css/ContentPages.css"
+import SkillGrid from "./SkillGrid";
 
 /**
  * 此文件用于内容写作，与我静态页面版本内容完全一致（可能是我没话遍了）。
@@ -12,38 +14,30 @@ const ContentPages = ({ onCollapse }) => {
     {
       title: "个人介绍",
       content: (
-        <div class="text-block">
-          <p>陌生人你好，我是李有鑫，赛博世界中的名称为 Razorsax。</p>
-          <p>
-            现就读于中国科学技术大学 (USTC) 的信息科学技术学院，是一名 2025
-            年入学的小登，从此开始了被各路大佬暴打(非物理、非 M 倾向)的历程。
-          </p>
-          <p>
-            本页面是我用于 iGEM-Web组
-            培训所使用的个人简历页面，我自己的个人博客参见：
-            <a class="blog" href="https://foeyt.github.io/">
-              Link
-            </a>
-            。
-          </p>
+        <div className="resume-table">
+          <div className="resume-row">
+            <span className="resume-label">姓名</span>
+            <span className="resume-value">李有鑫 ( 赛博世界用名: Razorsax )</span>
+          </div>
+          <div className="resume-row">
+            <span className="resume-label">就读学院</span>
+            <span className="resume-value">中国科学技术大学信息科学技术学院</span>
+          </div>
+          <div className="resume-row">
+            <span className="resume-label">目前学历</span>
+            <span className="resume-value">本科一年级在读</span>
+          </div>
+          <div className="resume-row">
+            <span className="resume-label">兴趣方向</span>
+            <span className="resume-value">计算机图形学, 各种编程语言, 生成式人工智能, 电子游戏设计</span>
+          </div>
         </div>
       ),
     },
     {
       title: "掌握技能",
       content: (
-        <ul class="skill-list">
-          <li> 后端：会用 C/C++/Java/Python，正在学习 Rust；</li>
-          <li> 前端：会用 HTML/CSS/JavaScript，正在学习 React + Vue；</li>
-          <li>
-            {" "}
-            运维：用过 Debian/Docker，在个人电脑上部署并使用 WSL2 + Debian；
-          </li>
-          <li>
-            {" "}
-            运用 Hexo + NexT 搭建个人博客，运用 Dify 本地部署 AI 智能体。
-          </li>
-        </ul>
+        <SkillGrid />
       ),
     },
     {

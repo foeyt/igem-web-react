@@ -51,8 +51,7 @@ html, body {
 }
 
 /* 逻辑是：我预先准备了三张图片，hero, hero-top, hero-bottom，当我点击 hero 后，hero 页面显示消失，此时显示 hero-top, hero-bottom，
-   伪造出 hero 图片从中间一分为二的假象。
-*/
+   伪造出 hero 图片从中间一分为二的假象。*/
 .full-image.hidden {
   opacity: 0;
   pointer-events: none;
@@ -184,7 +183,7 @@ html, body {
   margin-bottom: 30px;
 }
 
-/* 页面指示器 */
+/* 页面指示器
 .page-indicator {
   display: flex;
   justify-content: center;
@@ -201,9 +200,9 @@ html, body {
 
 .dot.active {
   background: #fff;
-}
+} */
 
-/* 这些样式用于美化内容，和我静态页面内容样式一模一样 */
+/* 这些样式用于美化内容，和我静态页面内容样式一模一样
 .blog {
     color: ghostwhite;
     text-decoration: dashed;
@@ -229,7 +228,7 @@ html, body {
 
 .skill-list li:last-child, .hobby-list li:last-child {
     border-bottom: none;
-}
+} */
 
 /* 移动端适配 */
 @media (max-width: 768px) {
@@ -264,9 +263,9 @@ html, body {
     font-size: 2rem;
   }
 
-  .pages-container p {
+  /* .pages-container p {
     font-size: 1rem;
-  }
+  } */
 }
 
 /* 小屏手机适配 */
@@ -283,9 +282,9 @@ html, body {
     transform: translateY(25vh);
   }
 
-  .pages-container h1 {
+  /* .pages-container h1 {
     font-size: 1.8rem;
-  }
+  } */
 }
 
 /* 横屏模式 */
@@ -306,9 +305,9 @@ html, body {
     margin-top: 10px;
   }
 
-  .pages-container {
+  /* .pages-container {
     padding: 20px;
-  }
+  } */
 }
 
 /* 触控设备优化 */

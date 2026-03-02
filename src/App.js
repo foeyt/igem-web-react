@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import './App.css';
+import './css/App.css';
 import SparkParticles from './components/SparkParticles';
 import ContentPages from './components/ContentPages';
 
 function App() {
   const [isSplit, setIsSplit] = useState(false);
   
-  const heroUrl = "./img/hero.jpeg";
-  const heroTopUrl = "./img/hero-top.jpeg";
-  const heroBottomUrl = "./img/hero-bottom.jpeg";
+  const heroUrl = process.env.PUBLIC_URL + "/assets/img/hero.jpeg";
+  const heroTopUrl = process.env.PUBLIC_URL + "/assets/img/hero-top.jpeg";
+  const heroBottomUrl = process.env.PUBLIC_URL + "/assets/img/hero-bottom.jpeg";
 
   // 点击图片后分割
   const handleImageClick = () => {

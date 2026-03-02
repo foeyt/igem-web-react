@@ -1,0 +1,184 @@
+/* 页面容器 */
+.pages-container {
+  cursor: pointer;
+  user-select: none;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.6);
+  /* border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1); */
+  transition: transform 0.2s ease;
+  min-width: 320px;
+}
+
+.pages-container:active {
+  transform: scale(0.98);
+}
+
+/* 页面内容 */
+.page-content {
+  margin-bottom: 20px;
+}
+
+.page-content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+.page-content p {
+  font-size: 1.2rem;
+  color: #ccc;
+  text-align: center;
+  line-height: 1.6;
+}
+
+/* 简历表格 */
+.resume-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.resume-row {
+  display: flex;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-row:last-child {
+  border-bottom: none;
+}
+
+.resume-label {
+  flex: 0 0 120px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #888;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-align: right;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.resume-value {
+  flex: 1;
+  padding: 16px 20px;
+  color: #fff;
+  font-size: 1rem;
+  min-height: 52px;
+}
+
+.page-content h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  color: #fff;
+  text-align: center;
+}
+
+/* 调整第二页标题间距 */
+.page-content:has(.skill-grid) h1 {
+  margin-bottom: 40px;
+}
+
+/* 页面指示器 */
+.page-indicator {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.dot.active {
+  background: #fff;
+  transform: scale(1.2);
+}
+
+/* 移动端适配 */
+@media (max-width: 768px) {
+  .pages-container {
+    padding: 30px 20px;
+    min-width: 280px;
+    width: 90vw;
+    max-width: 400px;
+  }
+
+  .page-content h1 {
+    font-size: 1.8rem;
+    margin-bottom: 24px;
+  }
+
+  .page-content p {
+    font-size: 1rem;
+  }
+
+  .resume-label {
+    flex: 0 0 100px;
+    padding: 14px 16px;
+    font-size: 0.9rem;
+  }
+
+  .resume-value {
+    padding: 14px 16px;
+    min-height: 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pages-container {
+    padding: 24px 16px;
+  }
+
+  .page-content h1 {
+    font-size: 1.6rem;
+  }
+
+  .resume-label {
+    flex: 0 0 90px;
+    padding: 12px 14px;
+    font-size: 0.85rem;
+  }
+
+  .resume-value {
+    padding: 12px 14px;
+    min-height: 44px;
+    font-size: 0.95rem;
+  }
+}
+
+/* 横屏模式 */
+@media (max-height: 500px) and (orientation: landscape) {
+  .pages-container {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+
+  .page-content {
+    margin-bottom: 0;
+    flex: 1;
+  }
+
+  .page-indicator {
+    flex-direction: column;
+    margin-top: 0;
+  }
+
+  .resume-label {
+    flex: 0 0 110px;
+  }
+}
