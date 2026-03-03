@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './css/App.css';
 import SparkParticles from './components/SparkParticles';
 import ContentPages from './components/ContentPages';
+import SlidePanel from './components/SlidePanel';
 
 function App() {
   const [isSplit, setIsSplit] = useState(false);
@@ -54,6 +55,9 @@ function App() {
         <img src={heroUrl} alt="Hero" />
         <div className="click-text">试试点击</div>
       </div>
+
+      {/* 滑动评论面板 */}
+      <SlidePanel />
     </div>
   );
 }

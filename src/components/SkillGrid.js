@@ -1,6 +1,10 @@
 import React from 'react';
 import '../css/SkillGrid.css';
 
+/**
+ * 技能展示的图片存放位置，需要优化。
+ * @todo 图片太多展示太慢，此处需要优化为更小的图片，我用的是 512x512 的。
+ */
 const skills = [
   { name: 'C++', src: 'cpp.png' },
   { name: 'Java', src: 'java.png' },

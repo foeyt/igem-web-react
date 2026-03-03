@@ -3,7 +3,7 @@ import "../css/ContentPages.css"
 import SkillGrid from "./SkillGrid";
 
 /**
- * 此文件用于内容写作，与我静态页面版本内容完全一致（可能是我没话遍了）。
+ * 此文件用于内容写作。
  * 通过点击可以进行切换下一页，同时加入页面指示器圆点。
  * @returns 内容文本的 JSX。
  */
@@ -41,21 +41,28 @@ const ContentPages = ({ onCollapse }) => {
       ),
     },
     {
-      title: "兴趣爱好",
+      title: "性格爱好",
       content: (
-        <ul class="hobby-list">
-          <li> 单机游戏重度依赖 + 非专业游戏评鉴者和设计爱好者；</li>
-          <li>
-            {" "}
-            网上冲浪成瘾 + 无意义搞笑 meme 爱好者 + 神秘的笑点 + 爱好搬 💩；
-          </li>
-          <li>
-            {" "}
-            网络键盘大战旁观者 + ACG 圈子都在混的透明人 +
-            科技学术历史怪谈推理都在刷的神秘首页推荐；
-          </li>
-          <li> 极端社恐令人震惊！</li>
-        </ul>
+        <div className="page-content">
+          <ul className="hobby-list">
+            <li>
+              <span className="hobby-icon">🎮</span>
+              <span className="hobby-text">单机游戏重度依赖，非专业游戏评鉴者和设计爱好者，开源社区小透明。</span>
+            </li>
+            <li>
+              <span className="hobby-icon">👻</span>
+              <span className="hobby-text">无意义搞笑 meme 爱好者，神秘的笑点令人反省。</span>
+            </li>
+            <li>
+              <span className="hobby-icon">🏄</span>
+              <span className="hobby-text">网络冲浪手，科技/学术/历史/怪谈/推理/编程/游戏等广泛涉猎中···</span>
+            </li>
+            <li>
+              <span className="hobby-icon">😱</span>
+              <span className="hobby-text">社恐!!!</span>
+            </li>
+          </ul>
+        </div>
       ),
     },
   ];

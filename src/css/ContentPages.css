@@ -106,6 +106,55 @@
   transform: scale(1.2);
 }
 
+/* 爱好列表 */
+.hobby-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  text-align: left;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.hobby-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px;
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  border-left: 3px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hobby-list li:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-left-color: #ffffff;
+  transform: translateX(5px);
+}
+
+.hobby-icon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+  line-height: 1.4;
+}
+
+.hobby-text {
+  font-size: 0.95rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+.page-hint {
+  margin-top: 30px;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: center;
+}
+
 /* 移动端适配 */
 @media (max-width: 768px) {
   .pages-container {
@@ -134,6 +183,22 @@
     padding: 14px 16px;
     min-height: 48px;
   }
+
+  .hobby-list {
+    gap: 12px;
+  }
+
+  .hobby-list li {
+    padding: 14px 16px;
+  }
+
+  .hobby-icon {
+    font-size: 1.3rem;
+  }
+
+  .hobby-text {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -156,29 +221,18 @@
     min-height: 44px;
     font-size: 0.95rem;
   }
-}
 
-/* 横屏模式 */
-@media (max-height: 500px) and (orientation: landscape) {
-  .pages-container {
-    padding: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 30px;
+    .hobby-list li {
+    padding: 12px 14px;
+    gap: 10px;
   }
 
-  .page-content {
-    margin-bottom: 0;
-    flex: 1;
+  .hobby-icon {
+    font-size: 1.2rem;
   }
 
-  .page-indicator {
-    flex-direction: column;
-    margin-top: 0;
-  }
-
-  .resume-label {
-    flex: 0 0 110px;
+  .hobby-text {
+    font-size: 0.85rem;
+    line-height: 1.5;
   }
 }
